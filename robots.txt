@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /database/
+Disallow: /api/
+
+Sitemap: https://www.journeykaro.com/sitemap.php

@@ -1,0 +1,97 @@
+/* Journey Karo Admin */
+:root {
+  --adm-primary: #0d2b6e;
+  --adm-gold: #c9972a;
+  --adm-bg: #f1f5f9;
+  --adm-sidebar: #081d4e;
+  --adm-text: #1e293b;
+  --adm-muted: #64748b;
+  --adm-border: #e2e8f0;
+  --adm-radius: 10px;
+}
+* { box-sizing: border-box; }
+body.admin-body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--adm-bg);
+  color: var(--adm-text);
+  font-size: 14px;
+}
+.admin-wrap { display: flex; min-height: 100vh; }
+.admin-sidebar {
+  width: 260px;
+  background: var(--adm-sidebar);
+  color: #fff;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+}
+.admin-brand {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.admin-brand span { color: var(--adm-gold); display: block; font-size: 0.7rem; font-weight: 600; margin-top: 4px; }
+.admin-nav { padding: 1rem 0; }
+.admin-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.5rem;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.admin-nav a:hover, .admin-nav a.active { background: rgba(255,255,255,0.08); color: #fff; }
+.admin-main { flex: 1; margin-left: 260px; min-width: 0; }
+.admin-topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--adm-border);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin-content { padding: 1.5rem; }
+.admin-card {
+  background: #fff;
+  border-radius: var(--adm-radius);
+  border: 1px solid var(--adm-border);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.admin-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.stat-card { text-align: center; }
+.stat-card .num { font-size: 2rem; font-weight: 800; color: var(--adm-primary); }
+.stat-card .lbl { font-size: 0.75rem; color: var(--adm-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+table.admin-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+table.admin-table th, table.admin-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--adm-border); }
+table.admin-table th { font-weight: 700; color: var(--adm-muted); font-size: 0.75rem; text-transform: uppercase; }
+.badge { display: inline-block; padding: 0.2rem 0.55rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; }
+.badge-new { background: #dbeafe; color: #1d4ed8; }
+.badge-contacted { background: #fef3c7; color: #b45309; }
+.badge-quotation_sent { background: #e0e7ff; color: #4338ca; }
+.badge-confirmed { background: #dcfce7; color: #15803d; }
+.badge-lost { background: #fee2e2; color: #b91c1c; }
+.btn { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.8rem; border: none; cursor: pointer; text-decoration: none; }
+.btn-primary { background: var(--adm-primary); color: #fff; }
+.btn-gold { background: var(--adm-gold); color: #fff; }
+.btn-outline { background: #fff; border: 1px solid var(--adm-border); color: var(--adm-text); }
+.btn-danger { background: #dc2626; color: #fff; }
+.btn-sm { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-weight: 700; font-size: 0.8rem; margin-bottom: 0.35rem; }
+.form-control { width: 100%; padding: 0.55rem 0.75rem; border: 1px solid var(--adm-border); border-radius: 8px; font: inherit; }
+.form-control:focus { outline: 2px solid var(--adm-primary); border-color: transparent; }
+.alert { padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.alert-success { background: #dcfce7; color: #166534; }
+.alert-error { background: #fee2e2; color: #991b1b; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; align-items: flex-end; }
+@media (max-width: 900px) {
+  .admin-sidebar { transform: translateX(-100%); }
+  .admin-main { margin-left: 0; }
+}
